@@ -1,4 +1,8 @@
 # this is only for testing
 
-echo Force shurdonw >> /dev/kmsg
+df -h >> /dev/kmsg
+
+echo Force shutdown >> /dev/kmsg
+
+
 reboot -fn
