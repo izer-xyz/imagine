@@ -20,11 +20,13 @@ jobs:
       
       - uses: actions/checkout@v3
       
-      - run: |
+      - name: Load configuration from repo
+        run: |
           cat config
           cat config >> $GITHUB_ENV
        
-      - uses: izer-xyz/openwrt-imagebuilder-action@v1
+      - name: build openwrt image
+        uses: izer-xyz/openwrt-imagebuilder-action@v1
         with:
           profile: armvirt-32
           openwrt-version: ${{ env.openwrt_version }}
@@ -33,7 +35,8 @@ jobs:
           #disabled-services: dhcp
          # extra-image-name: useless
           
-      - run: |
+      - name: test openwrt image using qemu
+        run: |
          sudo chmod -R a+rw ./bin
          ls -la $(pwd)/bin/targets/armvirt/32
          gzip -d ./bin/targets/armvirt/32/openwrt-22.03.3-armvirt-32-rootfs-squashfs.img.gz || true
