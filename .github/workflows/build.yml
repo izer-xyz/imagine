@@ -22,7 +22,7 @@ jobs:
       
       - run: |
           cat config
-          cat config >> $GITHUB_ENV
+          sh -c config >> $GITHUB_ENV
        
       - uses: izer-xyz/openwrt-imagebuilder-action@v1
         with:
