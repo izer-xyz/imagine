@@ -1,3 +1,5 @@
+#!/bin/env -i sh
+
 profile=armvirt-32
 
 openwrt_version=22.03.3
@@ -8,3 +10,5 @@ packages=\
   -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe -uclient-fetch
 
 disabled_services=dhcp
+
+env
