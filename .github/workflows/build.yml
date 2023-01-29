@@ -19,15 +19,14 @@ jobs:
     steps:
       
       - uses: actions/checkout@v3
+      
+      - run: cat config >> $GITHUB_ENV
        
       - uses: izer-xyz/openwrt-imagebuilder-action@v1
         with:
           profile: armvirt-32
-          openwrt-version: 22.03.3
-          packages: >-
-            -firewall4 -ca-bundle -dnsmasq -dropbear   
-            -kmod-nft-offload -libustream-wolfssl -logd  
-            -nftables -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe -uclient-fetch 
+          openwrt-version: ${{ env.openwrt_version }}
+          packages: ${{ env.packages }}
           files: files
           #disabled-services: dhcp
          # extra-image-name: useless
