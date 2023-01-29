@@ -1,0 +1,48 @@
+
+name: build
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  #push:
+    #branches: [ "main" ]
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+
+  build:
+  
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      
+      - uses: actions/checkout@v3
+       
+      - uses: izer-xyz/openwrt-imagebuilder-action@v1
+        with:
+          profile: armvirt-32
+          openwrt-version: 22.03.3
+          packages: >-
+            -firewall4 -ca-bundle -dnsmasq -dropbear   
+            -kmod-nft-offload -libustream-wolfssl -logd  
+            -nftables -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe -uclient-fetch 
+          files: test/files
+          #disabled-services: dhcp
+         # extra-image-name: useless
+          
+      - run: |
+         sudo chmod -R a+rw ./bin
+         ls -la $(pwd)/bin/targets/armvirt/32
+         gzip -d ./bin/targets/armvirt/32/openwrt-22.03.2-armvirt-32-rootfs-squashfs.img.gz || true
+         docker run --rm \
+           -v $(pwd)/bin/targets/armvirt/32:/openwrt \
+           tianon/qemu \
+             qemu-system-arm \
+               -M virt-2.9 \
+               -kernel /openwrt/openwrt-22.03.2-armvirt-32-zImage \
+               -no-reboot -nographic \
+               -nic user -nic user  \
+               -drive file=/openwrt/openwrt-22.03.2-armvirt-32-rootfs-squashfs.img,if=virtio,format=raw  \
+               -append "root=/dev/vda"
