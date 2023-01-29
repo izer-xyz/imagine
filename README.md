@@ -1,2 +1,3 @@
 # imagine
-Custom openwrt builder
+
+Custom openwrt image to run docker on RPi
