@@ -1,0 +1,4 @@
+profile=armvirt-32
+openwrt_version=22.03.3
+packages="-firewall4 -ca-bundle -dnsmasq -dropbear -kmod-nft-offload -libustream-wolfssl -logd -nftables -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe -uclient-fetch"
+disabled_services=dhcp
