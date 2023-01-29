@@ -2,7 +2,7 @@
 
 df -h >> /dev/kmsg
 
+podman info >> /dev/kmsg
+
 echo Force shutdown >> /dev/kmsg
-
-
 reboot -fn
