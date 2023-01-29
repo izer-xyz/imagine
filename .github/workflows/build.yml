@@ -28,7 +28,7 @@ jobs:
             -firewall4 -ca-bundle -dnsmasq -dropbear   
             -kmod-nft-offload -libustream-wolfssl -logd  
             -nftables -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe -uclient-fetch 
-          files: test/files
+          files: files
           #disabled-services: dhcp
          # extra-image-name: useless
           
