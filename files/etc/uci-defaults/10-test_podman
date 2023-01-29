@@ -1,0 +1,2 @@
+echo run hello-world >> /dev/kmsg
+podman run -it hello-world >> /dev/kmsg
