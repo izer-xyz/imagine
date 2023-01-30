@@ -14,7 +14,12 @@ jobs:
     timeout-minutes: 10
 
     steps:
-          
+      - uses: robinraju/release-downloader@v1.7
+        with:
+         latest: true
+         fileName: "*"
+         out-file-path: "bin"
+         
       - name: test openwrt image using qemu
         run: |
          sudo chmod -R a+rw ./bin
