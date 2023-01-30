@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - uses: robinraju/release-downloader@v1.7
-        if: $ {{ hashFile('bin/*') == ''}}
+        if: ${{ hashFile('bin/*') == ''}}
         with:
          latest: true
          fileName: "*"
