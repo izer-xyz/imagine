@@ -14,12 +14,16 @@ jobs:
     timeout-minutes: 10
 
     steps:
+      - run: |
+          mkdir bin
+          echo hello >> bin/file
+          
       - uses: robinraju/release-downloader@v1.7
         if: ${{ hashFiles('bin/*') == ''}}
         with:
          latest: true
-         fileName: "*"
-         out-file-path: "bin"
+         fileName: '*'
+         out-file-path: 'bin'
          
       - name: test openwrt image using qemu
         run: |
