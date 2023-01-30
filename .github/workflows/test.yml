@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: robinraju/release-downloader@v1.7
         with:
-         tag: "v0.0.27"
+         latest: true
          fileName: "*"
          out-file-path: "bin"
          
