@@ -25,7 +25,7 @@ jobs:
           cat config
           cat config >> $GITHUB_ENV
        
-      - name: build openwrt image
+      - name: Build openwrt image
         uses: izer-xyz/openwrt-imagebuilder-action@main
         with:
           profile: armvirt-32
@@ -33,6 +33,13 @@ jobs:
           packages: ${{ env.packages }}
           files: files
           #disabled-services: dhcp
-         # extra-image-name: useless
-          
-      - uses: izer-xyz/imagine/.github/workflows/test.yml@main
+      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: v${{ env.openwrt_version }}-${{ github.run_number }}
+          prerelease: true
+          files: |
+            bin
+  
+      #- uses: izer-xyz/imagine/.github/workflows/test.yml@main
