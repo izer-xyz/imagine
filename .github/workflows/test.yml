@@ -14,12 +14,9 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - run: |
-          mkdir bin
-          echo hello >> bin/file
           
       - uses: robinraju/release-downloader@v1.7
-        if: ${{ hashFiles('bin/*') == ''}}
+        if: ${{ hashFiles('bin/*') == ''}} # test if bin empty
         with:
          latest: true
          fileName: '*'
