@@ -35,4 +35,4 @@ jobs:
           #disabled-services: dhcp
          # extra-image-name: useless
           
-      - uses: ./.github/workflows/test.yml
+      - uses: .github/workflows/test.yml
