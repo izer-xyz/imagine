@@ -38,11 +38,13 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v0.0.${{ github.run_number }}
-          prerelease: true
           body: |
-            OpenWrt version: ${{ env.openwrt_version }}
-            Profile: ${{ env.profile }}
-            Packages: ${{ env.packages }}
+            Custom OpenWrt build to run a mini arm server.
+            
+            * OpenWrt version: ${{ env.openwrt_version }}
+            * Profile: ${{ env.profile }}
+            * Packages: ${{ env.packages }}
+            
           files: |
             bin/*
   
