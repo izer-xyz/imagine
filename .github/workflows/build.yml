@@ -35,8 +35,6 @@ jobs:
           files: files
           #disabled-services: dhcp
       
-      - uses: ./.github/workflows/test.yml
-      
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
@@ -49,6 +47,6 @@ jobs:
             * Packages: ${{ env.packages }}
             
           files: |
-            bin/*
-  
-      
+            bin/*  
+  test:
+    uses: ./.github/workflows/test.yml
