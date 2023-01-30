@@ -1,0 +1,32 @@
+name: test
+
+on:
+
+  workflow_dispatch:
+  
+  workflow_call:
+
+jobs:
+
+  test:
+  
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+          
+      - name: test openwrt image using qemu
+        run: |
+         sudo chmod -R a+rw ./bin
+         ls -la $(pwd)/bin
+         gzip -d ./bin/rootfs-squashfs.img.gz || true
+         docker run --rm \
+           -v $(pwd)/bin:/openwrt \
+           tianon/qemu \
+             qemu-system-arm \
+               -M virt-2.9 \
+               -kernel /openwrt/zImage \
+               -no-reboot -nographic \
+               -nic user -nic user  \
+               -drive file=/openwrt/rootfs-squashfs.img,if=virtio,format=raw  \
+               -append "root=/dev/vda"
