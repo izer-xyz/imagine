@@ -37,10 +37,13 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          name: v${{ env.openwrt_version }}-${{ github.run_number }}
+          tag_name: v0.0.${{ github.run_number }}
           prerelease: true
-          tag_name: v0.0.1
+          body: |
+            OpenWrt version: ${{ env.openwrt_version }}
+            Profile: ${{ env.profile }}
+            Packages: ${{ env.packages }}
           files: |
-            bin
+            bin/*
   
       #- uses: izer-xyz/imagine/.github/workflows/test.yml@main
