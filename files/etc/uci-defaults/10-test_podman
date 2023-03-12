@@ -1,2 +1,5 @@
 echo run hello-world >> /dev/kmsg
 podman run -it hello-world >> /dev/kmsg
+
+
+# podman run -d -e PODMAN=1  -p 9001:9001 --name portainer_agent  --network host --rm -v /run/podman/podman.sock:/var/run/docker.sock -v /mnt/containers/storage/volumes:/var/lib/docker/volumes  portainer/agent:latestl
