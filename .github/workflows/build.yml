@@ -27,7 +27,7 @@ jobs:
           cat config >> $GITHUB_ENV
        
       - name: Build openwrt image
-        uses: izer-xyz/openwrt-imagebuilder-action@latest
+        uses: izer-xyz/openwrt-imagebuilder-action@v4
         with:
           profile: ${{ env.profile }}
           openwrt-version: ${{ env.openwrt_version }}
