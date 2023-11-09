@@ -32,6 +32,7 @@ jobs:
           profile: ${{ env.profile }}
           openwrt-version: ${{ env.openwrt_version }}
           packages: ${{ env.packages }}
+          debug: ${{ env.debug }}
           files: files
           #disabled-services: dhcp
       
