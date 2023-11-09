@@ -3,7 +3,7 @@ profile=bcm27xx-bcm2711
 
 openwrt_version=22.03.5
 
-packages=block-mount dockerd docker ollectd collectd-mod-cpu collectd-mod-load collectd-mod-network collectd-mod-ping collectd-mod-thermal vxlan kmod-vxlan luci -firewall4 -dnsmasq -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe -odhcp6c -kmod-sound-arm-bcm2835 -kmod-sound-core -kmod-usb-hid -cypress-firmware-43455-sdio -cypress-nvram-43455-sdio-rpi-4b
+packages=block-mount dockerd docker collectd collectd-mod-cpu collectd-mod-load collectd-mod-network collectd-mod-ping collectd-mod-thermal vxlan kmod-vxlan luci -firewall4 -dnsmasq -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe -odhcp6c -kmod-sound-arm-bcm2835 -kmod-sound-core -kmod-usb-hid -cypress-firmware-43455-sdio -cypress-nvram-43455-sdio-rpi-4b
 
 disabled_services=
 
