@@ -1,8 +1,8 @@
 
-profile=armvirt-32
+profile=bcm27xx-bcm2711
 
-openwrt_version=22.03.3
+openwrt_version=22.03.5
 
-packages=podman crun -mkf2fs -e2fsprogs -fstools -firewall4 -ca-bundle -dnsmasq -dropbear -kmod-nft-offload -libustream-wolfssl -logd -nftables -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe -uclient-fetch
+packages=docker dockerd -firewall4 -dnsmasq -odhcpd-ipv6only -opkg -ppp -ppp-mod-pppoe
 
-disabled_services=dhcp
+disabled_services=
