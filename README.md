@@ -41,8 +41,20 @@ See [beast](https://github.com/izer-xyz/beast)
 
 ## Install / Initial Setup 
 
-...
+Hardware
+
+ * RPi 4b - more the RAM the better
+ * SD Card (maybe optional with usb boot)
+ * External Drive
+
+Steps
+
+  1. Download the latest image (rpi-4-squashfs-factory.img.gz) from [Release](https://github.com/izer-xyz/imagine/releases/latest)
+  2. Write image to the SD Card (balenaEtcher)
+  3. ...
+
 
 ## Upgrade 
 
-...
+ 1. ssh to the box
+ 2. ```# sysupgrade https://github.com/izer-xyz/imagine/releases/download/[latest]/rpi-4-squashfs-sysupgrade.img.gz ```
