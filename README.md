@@ -21,6 +21,17 @@ Custom openwrt image to run dockerd on RPi 4.
 
 Look around this repo.
 
+Limited base packages plus:
+
+ * block-mount - auto mount extra partition
+ * dockerd - run containers
+ * collectd - some stats
+
+Skip packages related to: 
+
+ * audio
+ * wifi
+
 ## The File System
 
  * [SquashFS](https://openwrt.org/docs/techref/filesystems#squashfs) - Compressed read-only file system
