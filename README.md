@@ -60,7 +60,7 @@ Hardware
 
 Steps
 
-  1. Download the latest image (rpi-4-squashfs-factory.img.gz) from [Release](https://github.com/izer-xyz/imagine/releases/latest)
+  1. Download the latest image (rpi-4-squashfs-factory.img.gz) from [Release](https://github.com/izer-xyz/imagine/releases/latest/download/rpi-4-squashfs-factory.img.gz)
   2. Write image to the SD Card (balenaEtcher)
   3. ...
 
@@ -68,4 +68,4 @@ Steps
 ## Upgrade 
 
  1. ssh to the box
- 2. ```# sysupgrade https://github.com/izer-xyz/imagine/releases/download/[latest]/rpi-4-squashfs-sysupgrade.img.gz ```
+ 2. ```# sysupgrade https://github.com/izer-xyz/imagine/releases/latest/download/rpi-4-squashfs-sysupgrade.img.gz ```
