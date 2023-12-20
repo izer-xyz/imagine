@@ -34,7 +34,7 @@ jobs:
           packages: ${{ env.packages }}
           debug: ${{ env.debug }}
           files: files
-          #disabled-services: dhcp
+          disabled-services: ${{ env.disabled_services }}
       
       - name: Release
         uses: softprops/action-gh-release@v1
