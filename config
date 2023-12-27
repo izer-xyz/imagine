@@ -3,7 +3,7 @@ profile=bcm27xx-bcm2711
 
 openwrt_version=23.05.2
 
-packages=bash syslog-ng smartmontools smartmontools-drivedb usbutils tailscale avahi-daemon block-mount dockerd docker luci-app-statistics collectd collectd-mod-exec collectd-mod-cpu collectd-mod-load collectd-mod-network collectd-mod-ping collectd-mod-thermal collectd-mod-disk vxlan kmod-vxlan luci cfdisk -firewall4 -dnsmasq -kmod-brcmfmac -odhcpd-ipv6only -ppp -ppp-mod-pppoe -odhcp6c -kmod-sound-arm-bcm2835 -kmod-sound-core -kmod-usb-hid -cypress-firmware-43455-sdio -cypress-nvram-43455-sdio-rpi-4b -wpad-basic-mbedtls -wpad-basic-wolfssl -iwinfo
+packages=bash smartmontools smartmontools-drivedb usbutils tailscale avahi-daemon block-mount dockerd docker luci-app-statistics collectd collectd-mod-exec collectd-mod-cpu collectd-mod-load collectd-mod-network collectd-mod-ping collectd-mod-thermal collectd-mod-disk vxlan kmod-vxlan luci cfdisk -firewall4 -dnsmasq -kmod-brcmfmac -odhcpd-ipv6only -ppp -ppp-mod-pppoe -odhcp6c -kmod-sound-arm-bcm2835 -kmod-sound-core -kmod-usb-hid -cypress-firmware-43455-sdio -cypress-nvram-43455-sdio-rpi-4b -wpad-basic-mbedtls -wpad-basic-wolfssl -iwinfo
 
 disabled_services=firewall
 
